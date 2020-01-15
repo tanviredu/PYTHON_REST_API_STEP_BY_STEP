@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,get_object_or_404
 
 ## import the Response from the restapi 
 from rest_framework.response import Response
@@ -10,9 +10,23 @@ from .models import Article
 ## now all our function will be inside the API derived class
 ## because we need APi
 
+from .serializers import ArticleSerializer
+
 class Articleview(APIView):
     def get(self,request):
         ## get all the articles
         articles = Article.objects.all()
         ## return to response
-        return Response({"articles":articles})
+        ## added the serializer
+
+        serializer = ArticleSerializer(articles,many=True)
+
+        ## many=true means we fetch multiple data 
+
+        return Response({"articles":serializer.data})
+
+    def get(self,request,pk):
+        article = get_object_or_404(Article.objects.all(),pk=pk)
+        serializer = ArticleSerializer(article)
+        return Response({"article":serializer.data})
+

@@ -133,3 +133,35 @@ then your total URL will be
         dont worry we are close
         
         
+16) serializer is the most common problem you face in any
+    api development in any framework
+
+    it means the data you fetch from the database
+    cant be converted to JSON
+
+    so lets serialize it
+
+    1) make a new file name "serializers.py" inside the blog
+        and go to that file
+
+    2) inside the file we make another serialize schema
+        using the serializer class 
+        its just like a databse schema
+
+    3) now go to the "views.py" and import the serializer 
+        and return the serialize data inside the get method
+
+    4) run the server again and go to the url 
+
+    localhost:8000/api/articles
+
+    YESSS !! we got it
+
+
+    4) now make another get request that it for fetching single
+        post with help of primary key pk
+
+        after adding in the views.py
+
+        add the corresponding url and this time we pass a parameter
+        that is the primary key in urls.py inside the blog app
