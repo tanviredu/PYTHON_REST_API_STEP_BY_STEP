@@ -219,3 +219,63 @@ then your total URL will be
 
     5) now open postman and try to post that JSON
 
+
+19) now we add the put method
+    its a little bit difficult because
+    1) first we have to fetch the article
+    2) then we have to replace the value with the new one
+    30 then we have to repost it
+
+    we change this json 
+    {
+        "article":{
+            "title": "tanvir",
+            "description" : "tanvir is awosme",
+            "body" : "this is post API",
+            "author_id":1
+
+        }
+    }
+    
+    to
+
+    {
+        "article":{
+            "title": "tanvir rahman ornob",
+            "description" : "tanvir is awosme and this is edited",
+            "body" : "this is a edited  post API",
+            "author_id":1
+
+        }
+    }
+
+
+
+
+
+
+
+
+
+    1) make a new method in the serializer.py
+        we take the obeject and then change its attribute with the new data
+        we use the update() method for that in the serializer
+
+    2) now we add the put method in the views.py
+
+
+    3) now add the url
+
+        now uncomment the url that are commented we use this for put method
+
+        we use this for put because in a single class
+        you cant use similer method
+        you have to use in another class
+        so we use this as a put method and 
+        for fetching single post we use another class later
+        so we use the url
+
+        path('articles/<int:pk>',Articleview.as_view())
+
+        for put request
+

@@ -45,3 +45,20 @@ class Articleview(APIView):
         ## now send the data to output
         return Response({"Success":"Article '{}' created successfully".format(article_saved.title)})
 
+
+    def put(self,request,pk):
+        ## fetch the article
+        saved_article = get_object_or_404(Article.objects.all(),pk=pk)
+        ##get the new data
+        data = request.data.get('article')
+        ##send it to the serializer
+        serializer = ArticleSerializer(instance=saved_article,data=data,partial=True)
+
+        ## partial=True means it can parial edit the document
+
+        if serializer.is_valid(raise_exception=True):
+            ## save the article
+            article_saved = serializer.save()
+
+        ##return the data
+        return Response({"success":"Article '{}' updated sucessfully".format(article_saved.title)})
