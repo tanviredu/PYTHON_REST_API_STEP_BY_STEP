@@ -28,6 +28,6 @@ class Article(models.Model):
     # deleted too
 
     def __str__(self):
-        return self.author 
+        return self.title 
 
 
