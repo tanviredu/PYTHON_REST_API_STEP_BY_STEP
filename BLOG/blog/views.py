@@ -25,8 +25,23 @@ class Articleview(APIView):
 
         return Response({"articles":serializer.data})
 
-    def get(self,request,pk):
-        article = get_object_or_404(Article.objects.all(),pk=pk)
-        serializer = ArticleSerializer(article)
-        return Response({"article":serializer.data})
+    # def get(self,request,pk):
+    #     article = get_object_or_404(Article.objects.all(),pk=pk)
+    #     serializer = ArticleSerializer(article)
+    #     return Response({"article":serializer.data})
+
+
+    def post(self,request):
+        ## get the post JSON with the key
+        article = request.data.get('article')
+        #serialize it
+        serializer = ArticleSerializer(data=article)
+
+        ## chack is data is valid
+        if serializer.is_valid(raise_exception=True):
+            ##save the article
+            article_saved = serializer.save()
+        
+        ## now send the data to output
+        return Response({"Success":"Article '{}' created successfully".format(article_saved.title)})
 
