@@ -60,3 +60,41 @@
     => python3 manage.py makemigrations
     => python3 manage.py migrate
 
+
+
+11) data , we need a lot of data to play with
+    so we use the seeder for generating the data
+    and we change some core library to make this work
+    because this library is buggy
+
+    1) add the 'django_seed' to the settings.py in the project
+    go to the settings.py
+
+    2) go to the folder
+        venv/lib/site-packages/django_seed
+
+        and inside there is a file called "__init__.py"
+
+        open it and go to the "faker" function 
+
+        go to line 35
+
+        and change the line
+
+        from:
+            cls.fakers[code].seed(random.randint(1, 10000))
+
+        to:
+            cls.fakers[code].seed_instance(random.randint(1, 10000))
+
+        go and see the __init__.py file
+
+    3) 
+        we import the seeder and fill the 
+        table with fake data
+        100 users and 200 Article
+        we use the Faker Service to do that 
+        
+        run command
+        => python3 manage.py shell
+

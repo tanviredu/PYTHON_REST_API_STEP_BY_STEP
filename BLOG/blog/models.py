@@ -16,7 +16,7 @@ class Author(models.Model):
 ## this is Article Model
 
 class Article(models.Model):
-    id = models.IntegerField(primary_key=True)
+    
     title = models.CharField(max_length=255)
     description = models.TextField()
     body = models.TextField()
@@ -29,6 +29,6 @@ class Article(models.Model):
     # deleted too
 
     def __str__(self):
-        return self.author 
+        return self.title 
 
 
