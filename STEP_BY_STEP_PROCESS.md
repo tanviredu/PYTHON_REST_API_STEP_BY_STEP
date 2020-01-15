@@ -165,3 +165,57 @@ then your total URL will be
 
         add the corresponding url and this time we pass a parameter
         that is the primary key in urls.py inside the blog app
+
+17) now we make a post request
+    lets go to the views.py
+
+    this post request will take the posted data and save it
+
+    suppose we decided to post this JSON data
+
+    {
+        "article":{
+            "title": "tanvir",
+            "description" : "tanvir is awosme",
+            "body" : "this is post API",
+            "author_id":1
+
+        }
+    }
+
+    so this JSON data is under the key "article"
+
+    just keep that in mind we need this information
+
+18)  you need to understand for every entry
+    you need to add
+    
+    
+    1) the serializer.py
+    2) and the views.py
+    3) urls.py in the blog app
+
+    1) add the "create" method in the serializer.py
+        and the name have to be "create" otherwise it will not work
+        this will change the json to databae objects and save it
+    
+    2) go to the views.py and write a post request
+
+    3) now go to urls.py and add  a link for it
+
+        remember same path can be used for different HTTP operation
+        we use the second path for the POST 
+
+    4) now comment out the second get in views.py and its corresponding url. i will explain to you why later.just do it
+    
+
+    ######
+
+    check the serializer .add another field 
+
+    author_id = serializers.IntegerField()
+
+    ####
+
+    5) now open postman and try to post that JSON
+
