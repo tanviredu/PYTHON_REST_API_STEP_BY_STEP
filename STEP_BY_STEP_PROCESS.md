@@ -117,5 +117,11 @@ then your total URL will be
         go to the blog/urls.py
 
         1) we import the class from views.py and add a route
+
+        ok now everything is done
+
+        lets runthe server and go to the url
+
+        localhost:8000/api/articles
         
         
