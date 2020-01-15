@@ -98,3 +98,13 @@ then your total URL will be
             because we need to create a logic 
             then we add the logic with the app url
 
+
+14) now we create  one logic .remember all the logic is written in the
+    views.py file
+    
+
+        1) first we add another package 'rest_framework' in the 
+            project settings.py
+        2) now we us the API class from the rest framework 
+            go to the views.py inside the blog app
+            and wite a get method
