@@ -61,3 +61,40 @@
     => python3 manage.py migrate
 
 no we got the the model and the data
+
+
+
+13)
+
+so we see we got all the model working and the data is generated
+now we create the url pattern
+
+look this pattern
+
+there will be two "urls.py" 
+
+1) in the Project BLOG
+2) in the app blog [you have to create it]
+
+your project URL will tells you which app you have to go
+and your app URL tell you which logic you have to go
+    
+if the project URL is 'api'
+and the app url is 'articles'
+then your total URL will be
+
+    => localhost:8000/api/articles
+
+        
+
+        1) go to the urls.py inside the BLOG project 
+
+            you will see it tels you to include blog.urls
+            that means urls.py inside the blog app
+            but there is no urls.py inside a blog
+            so we create a urls.py inside the blog 
+
+        2) now dont add anything leave it blank 
+            because we need to create a logic 
+            then we add the logic with the app url
+
