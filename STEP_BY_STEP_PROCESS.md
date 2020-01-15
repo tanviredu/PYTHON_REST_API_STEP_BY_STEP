@@ -94,7 +94,33 @@
         table with fake data
         100 users and 200 Article
         we use the Faker Service to do that 
+
+        in this step you also see how the interactive way to
+        manipulate data
         
         run command
         => python3 manage.py shell
 
+        it will open a python shell
+
+        >>> from django_seed import Seed
+        >>> from blog.models import Author,Article
+        >>> seeder = Seed.seeder()
+        >>> seeder.add_entity(Author,100,{'name':lambda x:seeder.faker.name(),'email':lambda x:seeder.faker.email()})
+        >>> seeder.add_entity(Article,200)
+        >>> seeder.execute()
+
+        exit the shell 
+
+        [explanation
+            we just import the model
+            and added the fake data with seeder
+        ]
+    
+    4) add the models in the admin.py inside the app
+        go to the admin.py and register 
+
+    5) now run the server and go to the admin panel and 
+    see if the data is there
+
+        
