@@ -279,3 +279,15 @@ then your total URL will be
 
         for put request
 
+
+20) last method for delete post
+    you know what to do
+
+    but this one is simple no need to add method 
+    in the serializer
+    just add a method delete()
+    take the object and delete it
+
+21) now we add another class
+    and add the get method for single post fetching
+    
