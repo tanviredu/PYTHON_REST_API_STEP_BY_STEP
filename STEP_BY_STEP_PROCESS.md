@@ -105,6 +105,17 @@ then your total URL will be
 
         1) first we add another package 'rest_framework' in the 
             project settings.py
-        2) now we us the API class from the rest framework 
+        2) now we use the API class from the rest framework 
             go to the views.py inside the blog app
             and wite a get method
+
+    
+15) now its time to add the logic with the app url
+    so go to the urls.py inside the blog app which was empty 
+    and connect to the logic
+
+        go to the blog/urls.py
+
+        1) we import the class from views.py and add a route
+        
+        

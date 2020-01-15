@@ -10,7 +10,7 @@ from .models import Article
 ## now all our function will be inside the API derived class
 ## because we need APi
 
-class Article(APIView):
+class Articleview(APIView):
     def get(self,request):
         ## get all the articles
         articles = Article.objects.all()
