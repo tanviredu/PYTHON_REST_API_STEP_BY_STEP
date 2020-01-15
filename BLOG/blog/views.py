@@ -71,3 +71,9 @@ class Articleview(APIView):
         article.delete()
         ## return the success message
         return Response({"message":"Article id '{}' is deleted".format(pk)})
+
+class SingleArticlePost(APIView):
+     def get(self,request,pk):
+         article = get_object_or_404(Article.objects.all(),pk=pk)
+         serializer = ArticleSerializer(article)
+         return Response({"article":serializer.data})
