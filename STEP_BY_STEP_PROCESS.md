@@ -120,8 +120,16 @@ then your total URL will be
 
         ok now everything is done
 
-        lets runthe server and go to the url
+        lets run the server and go to the url
 
         localhost:8000/api/articles
+
+        and you will see AN ERRRRRRORRRR!!!!!!!
+
+        but lets see what is the error
+
+        it says the Article is not serializable
+
+        dont worry we are close
         
         
