@@ -62,3 +62,12 @@ class Articleview(APIView):
 
         ##return the data
         return Response({"success":"Article '{}' updated sucessfully".format(article_saved.title)})
+
+    def delete(self,request,pk):
+
+        ## get the object first
+        article = get_object_or_404(Article.objects.all(),pk=pk)
+        ## delete it
+        article.delete()
+        ## return the success message
+        return Response({"message":"Article id '{}' is deleted".format(pk)})
