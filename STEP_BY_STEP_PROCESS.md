@@ -60,7 +60,48 @@
     => python3 manage.py makemigrations
     => python3 manage.py migrate
 
+
+12) django seeding 
+
+	this part is difficult we need to change a core library
+
+	go to the venv/lib/python3.6/site-packages/django-seed/__init__.py
+	open the file and go to 
+
+	function faker function in line 35
+
+	change the line from 
+
+	=> cls.fakers[code].seed(random.randint(1, 10000))
+
+	to 
+	
+	=> cls.fakers[code].seed_instance(random.randint(1, 10000))
+
+
+now type this command in the app folder
+	=> python3 manage.py shell
+
+
+	
+	Python 3.6.9 (default, Nov  7 2019, 10:44:02) 
+	[GCC 8.3.0] on linux
+	Type "help", "copyright", "credits" or "license" for more information.
+	(InteractiveConsole)
+	>>> from blog.models import Author,Article
+	>>> from django_seed import Seed
+	>>> seeder = Seed.seeder()
+	>>> seeder.add_entity(Author,100,{'name': lambda x:seeder.faker.name(),'email':lambda x:seeder.faker.email()})
+	>>> seeder.add_entity(Article,200)
+	>>> seeder.execute()
+
+
+
+
+
 no we got the the model and the data
+
+
 
 
 
